@@ -6,6 +6,25 @@ A structured preparation repository for GSoC 2026, covering all essential Machin
 
 <hr/>
 
+<hr/>
+
+<h2>🎯 Purpose of This Repository</h2>
+<ul>
+  <li>Build strong fundamentals in ML, DL, Bayesian modeling, and scientific ML</li>
+  <li>Practice code and theory directly relevant to GSoC organizations like:
+    <ul>
+      <li>ML4SCI</li>
+      <li>NumFOCUS projects</li>
+      <li>PyMC</li>
+      <li>Aeon</li>
+    </ul>
+  </li>
+  <li>Maintain structured notes for quick revision</li>
+  <li>Prepare end-to-end ML projects to strengthen GSoC proposals</li>
+</ul>
+
+<hr/>
+
 <h2>📁 Repository Structure</h2>
 
 <pre>
@@ -124,21 +143,3 @@ GSOC-PREP-2026
   <p>Dependencies required for running ML/DL projects in this repository.</p>
 </section>
 
-<hr/>
-
-<h2>🎯 Purpose of This Repository</h2>
-<ul>
-  <li>Build strong fundamentals in ML, DL, Bayesian modeling, and scientific ML</li>
-  <li>Practice code and theory directly relevant to GSoC organizations like:
-    <ul>
-      <li>ML4SCI</li>
-      <li>NumFOCUS projects</li>
-      <li>PyMC</li>
-      <li>Aeon</li>
-    </ul>
-  </li>
-  <li>Maintain structured notes for quick revision</li>
-  <li>Prepare end-to-end ML projects to strengthen GSoC proposals</li>
-</ul>
-
-<hr/>
