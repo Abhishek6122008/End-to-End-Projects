@@ -142,5 +142,3 @@ GSOC-PREP-2026
 </ul>
 
 <hr/>
-
-<p align="center"><strong>✨ Good luck with your GSoC prep — paste this into README.md and tweak the sections as you fill folders with content! ✨</strong></p>
