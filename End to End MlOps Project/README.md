@@ -1,151 +1,198 @@
-End-to-End MLOps Pipeline for Phishing Detection
+# End-to-End MLOps Pipeline for Phishing Detection
 
-This project implements a complete end-to-end MLOps pipeline for detecting phishing websites using machine learning.
-It covers the full lifecycle of a production ML system including data ingestion, validation, model training, evaluation, versioning, and API-based deployment.
+This repository contains an end-to-end MLOps pipeline for building, deploying and maintaining a machine learning system to detect phishing websites using network and URL-based features.
 
-The project is designed to demonstrate reproducible training, automated workflows and containerized deployment.
+The project demonstrates how a machine learning solution can be taken from raw data to a production-ready, containerized and automated system with continuous integration and deployment support.
 
-Project Objective
+---
 
-The goal of this project is to build a scalable and automated machine learning system that:
+## Project Objective
 
-ingests structured network and URL related data,
+The objective of this project is to design and implement a complete production-oriented machine learning workflow that:
 
-validates and preprocesses incoming data,
+- ingests phishing and legitimate website data
+- validates incoming data using a predefined schema
+- performs feature preparation and transformation
+- trains and evaluates a machine learning model
+- stores trained artifacts and prediction results
+- exposes the trained model through a REST API
+- supports automated workflows and containerized deployment
 
-trains and evaluates a phishing detection model,
+---
 
-stores trained artifacts and predictions,
+## Key Features
 
-and exposes the trained model through an API.
+- End-to-end machine learning pipeline
+- Automated data ingestion and validation
+- Data preprocessing and feature engineering
+- Model training and evaluation
+- Artifact generation and version management
+- REST API for model inference
+- Docker-based deployment
+- CI pipeline using GitHub Actions
+- Optional cloud deployment support using AWS
 
-Key Features
+---
 
-End-to-end machine learning pipeline
+## Tech Stack
 
-Automated data ingestion and validation
+- Python
+- Scikit-learn
+- Pandas, NumPy
+- FastAPI
+- MongoDB
+- Docker
+- Git
+- GitHub Actions
+- AWS ECR and EC2 (optional)
 
-Model training and evaluation pipeline
+---
 
-Artifact and model version management
+## Project Structure
 
-REST API for inference
-
-Dockerized application
-
-CI workflow using GitHub Actions
-
-Tech Stack
-
-Python
-
-Scikit-learn
-
-Pandas, NumPy
-
-FastAPI
-
-Docker
-
-GitHub Actions
-
-MongoDB (for data storage)
-
-AWS ECR / EC2 (for deployment – optional)
-
-Project Structure
+```
 .
-├── app.py                     # API entry point
-├── main.py                    # pipeline execution
-├── push_data.py               # data ingestion utility
+├── app.py                      # REST API entry point
+├── main.py                     # pipeline execution script
+├── push_data.py                # data ingestion utility
 ├── requirements.txt
 ├── Dockerfile
 ├── setup.py
 ├── test_mongodb.py
-├── data_schema/               # schema validation
-├── valid_data/                # validated datasets
-├── Artifacts/                 # pipeline artifacts
-├── final_model/               # trained model
-├── prediction_output/         # inference results
-├── templates/                 # UI / API templates
-└── .github/workflows/         # CI pipeline
+├── data_schema/                # schema definition for validation
+├── valid_data/                 # validated datasets
+├── Artifacts/                  # pipeline artifacts
+├── final_model/                # trained model
+├── prediction_output/          # inference results
+├── templates/                  # API / UI templates
+└── .github/workflows/          # CI workflows
+```
 
-MLOps Pipeline Overview
+---
 
-Data ingestion from source
+## MLOps Pipeline Overview
 
-Data validation using predefined schema
+The pipeline is organized into the following stages:
 
-Data transformation and feature preparation
+1. Data ingestion from source and database
+2. Schema-based data validation
+3. Data transformation and feature preparation
+4. Model training
+5. Model evaluation and comparison
+6. Model and artifact versioning
+7. API-based model serving
+8. Continuous integration using GitHub Actions
 
-Model training
+---
 
-Model evaluation and comparison
+## How to Run the Project Locally
 
-Artifact generation and versioning
+### 1. Create a virtual environment
 
-Deployment through API
-
-Continuous integration using GitHub Actions
-
-How to Run Locally
-1. Create virtual environment
+```bash
 python -m venv venv
+```
+
+Activate the environment:
+
+Linux / Mac
+
+```bash
 source venv/bin/activate
+```
 
-2. Install dependencies
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Run training pipeline
+---
+
+### 3. Run the training pipeline
+
+```bash
 python main.py
+```
 
-Run API
+This will execute the complete pipeline and generate model and data artifacts.
+
+---
+
+## Run the Inference API
+
+```bash
 python app.py
+```
 
+After starting the server, the trained model can be accessed through the REST API for inference.
 
-The API will start locally and can be used for inference.
+---
 
-Docker Build & Run
+## Docker Build and Run
+
+Build the container:
+
+```bash
 docker build -t phishing-mlops .
+```
+
+Run the container:
+
+```bash
 docker run -p 8080:8080 phishing-mlops
+```
 
-CI Pipeline
+---
 
-This repository uses GitHub Actions to automate:
+## CI Pipeline
 
-dependency installation
+This project uses GitHub Actions to automate:
 
-basic checks
+- dependency installation
+- pipeline execution
+- and basic validation checks
 
-pipeline execution
+The workflow configuration can be found in:
 
-The workflow configuration is available in:
-
+```
 .github/workflows
+```
 
-Cloud Deployment (Optional)
+---
 
-This project supports container-based deployment using:
+## Cloud Deployment (Optional)
 
-AWS ECR for container registry
+The project supports container-based deployment using:
 
-AWS EC2 for hosting
+- AWS Elastic Container Registry (ECR)
+- AWS EC2
 
-AWS credentials are configured using GitHub secrets.
+AWS credentials are configured using GitHub Secrets in the repository settings.
 
-What this project demonstrates
+---
 
-Building a production-oriented ML pipeline
+## What This Project Demonstrates
 
-Separation of training and serving logic
+- Design of a complete production-oriented ML system
+- Automation of training and evaluation workflows
+- Separation of pipeline logic and serving logic
+- Reproducible experiments and artifact tracking
+- Backend stability using modular pipeline components
+- Practical usage of Docker and CI/CD in machine learning systems
 
-Reproducible experiments
+---
 
-Backend stability through modular pipelines
+## Author
 
-Real-world MLOps practices using Docker and CI/CD
-
-Author
-
-Abhishek
-B.Tech CSE (AI & ML), K.R. Mangalam University
+Abhishek  
+B.Tech – Computer Science and Engineering (AI & ML)  
+K.R. Mangalam University, India
